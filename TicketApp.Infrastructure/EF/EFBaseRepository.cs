@@ -17,8 +17,8 @@ namespace TicketApp.Infrastructure.EF
   {
 
     // TContext EFBaseContext direkt olarak bağlamadık, Dependency Inversion yaparak farklı dbContext instanceları ilede çalışabilmesini sağladık
-    private TContext db;
-    private DbSet<TEntity> table; // db deki table instance
+    protected TContext db;
+    protected DbSet<TEntity> table; // db deki table instance
 
     public EFBaseRepository(TContext db)
     {

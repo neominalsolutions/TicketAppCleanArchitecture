@@ -19,12 +19,16 @@ namespace TicketApp.Infrastructure.EF
 
     public double GetDailyAssignedTicketHours(string employeeId)
     {
-      throw new NotImplementedException();
+      return table.Where(x => x.AssignedAt.Date == DateTime.Now.Date && x.EmployeId == employeeId).Sum(x=> x.EstimatedTime);
     }
 
     public double GetWeeklyAssignedTicketHours(string employeeId)
     {
-      throw new NotImplementedException();
+      int dayIndex = (int)(DateTime.Now).DayOfWeek; // 0-6
+      DateTime startDate = DateTime.Now.AddDays(-dayIndex);
+      DateTime endDate = DateTime.Now.AddDays(7-dayIndex);
+
+      return table.Where(x => x.AssignedAt.Date >= startDate.Date && x.AssignedAt.Date <= endDate.Date && x.EmployeId == employeeId).Sum(x => x.EstimatedTime);
     }
 
     

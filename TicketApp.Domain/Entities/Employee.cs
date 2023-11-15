@@ -24,12 +24,15 @@ namespace TicketApp.Domain.Entities
 
     public IReadOnlyList<EmployeeTicket> Tickets => tickets;
 
+    // Information Export
+    // Creator
     public void AssignTicket(Ticket ticket, int estimatedTime)
     {
       tickets.Add(new EmployeeTicket { 
         TicketId = ticket.Id,
         EmployeId = this.Id,
-        EstimatedTime = estimatedTime
+        EstimatedTime = estimatedTime,
+        AssignedAt = DateTime.Now
       });
     }
 

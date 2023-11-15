@@ -12,6 +12,8 @@ namespace TicketApp.Domain.Entities
     public string TicketId { get; set; }
     public string EmployeId { get; set; }
     public int EstimatedTime { get; set; } // saat olarak
+    public DateTime AssignedAt { get; set; }
+
 
   }
 }
