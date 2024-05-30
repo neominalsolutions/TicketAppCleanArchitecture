@@ -11,7 +11,7 @@ using TicketApp.Domain.SeedWork;
 namespace TicketApp.Domain.Entities
 {
   // POCO class olmalı db veya herhangi bir teknoloji bağımlılığı olmamalı.
-
+  // Plain Old CLR Object
   //[Table("Calisanlar")]
   public class Employee:Entity
   {

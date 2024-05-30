@@ -30,7 +30,7 @@ namespace TicketApp.Persistance.EF.Contexts
     }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-      optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=TicketAppDb;uid=sa;pwd=1234");
+      optionsBuilder.UseSqlServer("Server=DESKTOP-2V3N9MI\\SQLEXPRESS;Database=TicketAppDb;Trusted_Connection=True;TrustServerCertificate=Yes");
 
       base.OnConfiguring(optionsBuilder);
     }
